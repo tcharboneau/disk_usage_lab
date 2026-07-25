@@ -8,7 +8,7 @@ This phase demonstrates core storage diagnostics, active volume mapping, and per
 ### Step 1: Volume Diagnostics & Mounting Verification
 1. Analyzed overall storage footprint and block utilization using `df` (disk free) metrics.
 2. Estimated specific directory consumption weights using `du` (disk usage) to map active allocation points.
-3. Evaluated the `/etc/fstab` (filesystem table) configuration file to audit persistent mounting paths, drive UUID bindings, and boot-time attachment parameters.
+3. Evaluated the `/etc/fstab` (filesystem table) configuration file to audit persistent mounting paths.
 
 ### Step 2: VirtualBox State Persistence
 * Captured the complete virtual machine baseline immediately following filesystem verification.
