@@ -21,17 +21,20 @@ Generated localized volume analytics to ensure healthy block provisioning:
 mkdir -p ~/Disk_Console
 mkdir -p ~/Disk_Console/Snapshots
 
+#Create target storage files for reports
+touch ~/Disk_Console/Snapshots/du_report
+touch ~/Disk_Console/Snapshots/fstab_head
+touch ~/Disk_Console/Snapshots/report
+
 # Output human-readable utilization analytics to a report file
 df -h / > ~/report
 
-# Append strict free space availability matrices to the report
-du -h / >> ~/report
+# Output human-readable utilization analytics to the report
+du -h / > ~/du_report
+
+# Output human-readable fstab elements to a report
+head /etc/fstab/ > ~/fstab_head
 ```
 
 
-# 2. Restrict script permissions to privileged root users only
-sudo chmod 700 /usr/local/bin/sys_maintenance.sh
-
-# 3. Verify that the background task runner is fully operational
-sudo systemctl status cron
 
