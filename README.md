@@ -15,7 +15,7 @@ This phase demonstrates core storage diagnostics, active volume mapping, and per
 
 
 ### Step 3: Human-Readable Storage Diagnostics
-Generated localized volume analytics to ensure healthy block provisioning:[1](1__PWD.png)
+Generated localized volume analytics to ensure healthy block provisioning:[1](1__PWD.png) 
 ```bash
 # Create target storage directory for reports
 mkdir -p ~/Disk_Console
