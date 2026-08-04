@@ -33,5 +33,36 @@ du -h / > ~/du_report
 head /etc/fstab/ > ~/fstab_head
 ```
 
+# Disk Usage Lab - Alternative Scheduling Branch
+
+This branch demonstrates an alternative approach to automating disk usage surveys using a Bash script and Cron jobs. It highlights workflow flexibility and Git branching proficiency.
+
+## Script Details (`disk_usage.sh`)
+
+* **Task**: Surveys disk space usage and logs the output.
+* **Schedule**: Automatically runs four times a day at 6:00 AM, 12:00 PM (Noon), 6:00 PM, and 12:00 Midnight.
+
+## Program and Cron Instructions
+
+### Activating the Program
+To run or test the disk usage script manually in your terminal:
+```bash
+# Make the script executable
+chmod +x disk_usage.sh
+
+# Run the script manually
+./disk_usage.sh
+```
+
+### Activating the Cron Feature
+To set up the automated schedule (6 AM, 12 PM, 6 PM, Midnight):
+```bash
+# Open the crontab editor
+crontab -e
+
+# Add the following line to schedule the script (adjust path as needed)
+0 6,12,18,0 * * * /path/to/disk_usage.sh >> /path/to/disk_log.txt 2>&1
+```
+
 
 
