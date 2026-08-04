@@ -1,0 +1,16 @@
+#!/bin/bash
+THRESHOLD=80
+EMAIL="admin@example.com"
+DATE=$(date "+%Y-%m-%d %H:%M:%S")
+
+# Get disk usage for the root partition
+USAGE=$(df -h / | awk 'NR==2 {print $5}' | sed 's/%//')
+
+MESSAGE="[${DATE}] Disk usage on root partition is at ${USAGE}%."
+
+if [ "$USAGE" -ge "$THRESHOLD" ]; then
+    # Send alert message if threshold is met or exceeded
+    echo "$MESSAGE" | mail -s "High Disk Usage Alert: ${USAGE}%" "$EMAIL"
+else
+    # Optional: log normal status or send regular status update
+    echo "$MESSAGE - Status Normal"
